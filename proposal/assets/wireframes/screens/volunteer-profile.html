@@ -1,0 +1,165 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>My profile | Food Relay</title><style>
+*{box-sizing:border-box}body{margin:0;background:#deded5;color:#23271e;font:15px system-ui,sans-serif}main{max-width:420px;margin:24px auto;border-radius:30px;overflow:hidden;background:#fcfcf7;border:1px solid #babeb0}header{display:flex;justify-content:space-between;align-items:center;padding:15px 20px;background:#263226;color:#fff}header small{color:#d7e2ca}.map{position:relative;background:#e3e7da}.map svg{display:block;width:100%;height:310px}.tag{position:absolute;top:14px;left:16px;background:#fbfcf6;border-radius:20px;padding:8px 12px;font-size:12px;font-weight:700}.sheet{position:relative;margin-top:-20px;background:#fcfcf7;border-radius:24px 24px 0 0;padding:20px}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}h1{font-size:24px;letter-spacing:-.04em;margin:4px 0}small{color:#53604f}.qty{padding:9px 12px;background:#e7eddf;border-radius:8px;font-weight:700;white-space:nowrap}ol{list-style:none;padding:0;margin:16px 0}li{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid #d9ddd3}li time{margin-left:auto;font-weight:700}.dot{width:10px;height:10px;border-radius:50%;background:#263226}.end{border-radius:2px;background:#995634}button{font:inherit;cursor:pointer;border:0;border-radius:13px;background:#d6eb91;color:#222a16;font-weight:750;width:100%;min-height:50px}button:disabled{background:#e1e8d7;cursor:default}.secondary{background:transparent;margin-top:5px;font-size:13px}dialog{border:0;border-radius:18px;padding:20px;width:min(340px,90vw);color:inherit}dialog::backdrop{background:#18231880}@media(max-width:440px){main{margin:0;border:0;border-radius:0}}
+
+nav{display:flex;overflow:auto;gap:6px;padding:10px;background:#e7eddf}nav button{width:auto;padding:6px 10px;white-space:nowrap;background:#fcfcf7;min-height:36px}nav [aria-current=true]{background:#263226;color:white}.sheet{margin-top:0;min-height:390px}.map+.sheet{margin-top:-20px}.map svg{height:240px}label{display:block;margin:10px 0}label input:not([type=checkbox]),select{display:block;width:100%;padding:8px;border:1px solid #9fa79a;border-radius:8px;background:#fff;font:inherit;margin-top:4px}details,.panel{background:#e7eddf;padding:12px;border-radius:10px;margin:10px 0}summary{cursor:pointer}progress{width:100%;accent-color:#304b37}.hint,footer{font-size:13px;color:#53604f}footer{padding:14px 20px}h2{font-size:18px}button:focus-visible,summary:focus-visible{outline:2px solid #995634;outline-offset:2px}
+.reward-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}.reward-tabs button{font-size:12px;background:#e7eddf}.reward-tabs button[aria-pressed=true]{background:#263226;color:white}.reward{padding:6px 0 14px}.reward p{line-height:1.5}progress{height:12px}.milestone{text-align:left;display:grid;grid-template-columns:40px 1fr;align-items:center;gap:2px 8px;padding:12px;margin:12px 0;background:#d6eb91}.milestone span{grid-row:span 2;font-size:26px;text-align:center}.milestone small{font-weight:500}#celebration{text-align:center;background:#fcfcf7}#celebration h2{font-size:25px;line-height:1.05;margin:8px 0}.celebration-art{display:flex;align-items:center;justify-content:center;gap:15px;padding:25px 0;background:#263226;border-radius:16px;color:#d6eb91;font-size:25px}.stamp{background:#d6eb91;color:#263226;padding:12px 20px;transform:rotate(-8deg);clip-path:polygon(0 0,83% 0,100% 22%,100% 100%,0 100%)}.stamp b,.stamp small{display:block}.stamp b{font-size:52px;line-height:.9}.stamp small{font-size:12px;font-weight:800}.celebration-art[data-kind=volunteer]{background:#144d48}.celebration-art[data-kind=volunteer] .stamp{background:#ffb480;color:#342618;transform:rotate(7deg)}@media(prefers-reduced-motion:no-preference){#celebration[open] .stamp{animation:stamp-in .65s cubic-bezier(.2,.85,.3,1.35) both}#celebration[open] .celebration-art>span{animation:spark-in .55s .18s both}@keyframes stamp-in{from{scale:.3;translate:0 -25px;opacity:0}to{scale:1;translate:0;opacity:1}}@keyframes spark-in{from{scale:0;opacity:0}to{scale:1;opacity:1}}}:root{--cream:#fdf9f3;--ink:#282f24;--lime:#dce992;--line:#deded1}
+body{background:#deded3;color:var(--ink)}main{background:var(--cream);box-shadow:0 14px 32px #282f2418}
+header,.screen-art{background:var(--ink)}header{padding:16px 20px}header strong{letter-spacing:-.03em;font-size:19px}
+nav{background:#e8e9dd;padding:9px 12px}nav button{min-height:38px;border:1px solid transparent}
+nav [aria-current=true]{background:var(--ink);border-color:var(--ink)}
+.sheet{background:var(--cream);padding:22px 20px}.sheet>small{font-size:11px;font-weight:750;letter-spacing:.1em;text-transform:uppercase}
+h1{font-size:clamp(25px,7vw,32px);letter-spacing:-.045em;line-height:1.04;margin:7px 0 14px}
+h2{letter-spacing:-.025em}button{background:var(--lime)}button.secondary{background:transparent;text-decoration:underline;text-underline-offset:3px}
+.screen-art{min-height:98px;display:grid;grid-template-columns:1fr auto auto;gap:13px;align-items:center;border-radius:17px;padding:14px 17px;margin:0 0 17px;color:var(--lime);overflow:hidden}
+.art-copy{max-width:11ch;color:#fff9e9;font-size:17px;font-weight:750;letter-spacing:-.025em;line-height:1.1}
+.art-spark{font-size:20px}.art-stamp{min-width:67px;text-align:center;transform:rotate(-7deg);padding:9px 10px;background:var(--lime);color:var(--ink);clip-path:polygon(0 0,83% 0,100% 22%,100% 100%,0 100%)}
+.art-stamp b,.art-stamp small{display:block;color:inherit}.art-stamp b{font-size:27px;letter-spacing:-.05em;line-height:1}.art-stamp small{font-size:9px;font-weight:850;letter-spacing:.09em}
+.art-1,.art-2,.art-3,.art-8{background:#174d45}.art-4,.art-6,.art-12{background:#3e4032}.art-4 .art-stamp,.art-6 .art-stamp,.art-9 .art-stamp,.art-12 .art-stamp{background:#ffbb8c}.art-9{background:#57362b}
+.map+.sheet .screen-art{min-height:75px;padding-block:10px}.map svg{height:205px}
+.panel,details{border:1px solid var(--line);background:#f0f1e5;border-radius:14px}.panel>strong{font-size:17px}
+label input:not([type=checkbox]),select{border-color:#a3a79a;border-radius:11px;min-height:43px;background:#fffdf7}
+footer{border-top:1px solid var(--line);background:var(--cream)}body[data-type]{font-family:var(--ui-font, "Segoe UI"),Arial,sans-serif}
+body[data-type=arial]{--ui-font:Arial}
+body[data-type=bahnschrift]{--ui-font:Bahnschrift}
+body[data-type=verdana]{--ui-font:Verdana}
+body[data-type=trebuchet]{--ui-font:"Trebuchet MS"}
+.type-picker{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0;padding:7px 14px;background:#f0f1e5;font-size:12px;font-weight:650}
+.type-picker select{display:inline-block;width:auto;margin:0;padding:4px 8px;min-height:32px;font-size:13px}body[data-fields] .sheet :is(input:not([type=checkbox]),select){background:var(--field-bg);color:var(--field-text,#252d25);border:var(--field-border);border-bottom:var(--field-bottom,var(--field-border));border-radius:var(--field-radius,11px);box-shadow:var(--field-shadow,none);padding:10px 12px}
+body[data-fields=outline]{--field-bg:#fffdf8;--field-border:1px solid #64745e}
+body[data-fields=filled]{--field-bg:#e6ecde;--field-border:1px solid transparent}
+body[data-fields=raised]{--field-bg:#fffdf8;--field-border:1px solid #ded8cb;--field-shadow:0 3px 0 #dcd4c6}
+body[data-fields=line]{--field-bg:transparent;--field-border:1px solid transparent;--field-bottom:2px solid #ab6144;--field-radius:0}
+body[data-fields=slate]{--field-bg:#e4ebed;--field-text:#243c44;--field-border:1px solid #a4b5bb;--field-shadow:inset 0 2px 3px #1a3c4715}
+body[data-fields] .sheet :is(input,select):focus-visible{outline:2px solid #276656;outline-offset:2px}
+body[data-fields] .sheet form label{font-weight:650;font-size:14px}header.app-top{position:sticky;top:0;z-index:2}.app-top button,.app-bottom button{display:grid;place-items:center;width:48px;min-height:44px;padding:0;background:transparent;color:inherit}.app-top button{color:#dce992}.app-bottom{position:sticky;bottom:0;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);justify-items:center;background:#fdf9f3;border-top:1px solid #deded1;padding:6px 12px calc(6px + env(safe-area-inset-bottom));box-shadow:0 -4px 15px #282f240c}.app-bottom button[aria-current=page]{background:#e6ecde;color:#263226}.relay-brand,.app-tools{display:flex;align-items:center}.relay-brand{gap:8px}.app-tools{gap:2px}.app-top button{position:relative}.unread-dot{position:absolute;top:7px;right:10px;width:7px;height:7px;border-radius:50%;background:#ffbb8c}
+/* Fixed phone canvas scaled to fit the preview window. */
+html,body{width:100%;height:100%;overflow:hidden}
+body{margin:0;display:grid;place-items:center}
+body>main{position:fixed;top:50%;left:50%;width:390px;max-width:none;height:844px;margin:0;border:1px solid #babeb0;border-radius:29px;transform:translate(-50%,-50%) scale(var(--phone-scale,1));display:grid;grid-template-rows:auto minmax(0,1fr) auto;overflow:hidden}
+body>main>article{grid-row:2;min-height:0;overflow:clip}
+main>article[hidden]{display:none}
+.phone-content{width:100%;transform-origin:top left}
+.phone-content>.sheet{min-height:0}
+.phone-content>.map svg{height:172px}
+body>main>.app-top,body>main>.app-bottom{position:static;grid-column:1}body>main>.app-top{grid-row:1}body>main>.app-bottom{grid-row:3}.profile-note{margin:0 0 14px;padding:0 0 0 12px;border-left:3px solid #839856;color:#40513c;font-size:15px;line-height:1.4}</style><body data-type="trebuchet" data-fields="filled"><main><header class="app-top"><span class="relay-brand"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><path fill="#dce992" d="M5 15c0-5 4.7-9 11-9s11 4 11 9c0 2-1.1 3.7-3 4.5V25H8v-5.5C6.1 18.7 5 17 5 15Z"/><path d="m11 15 2.5-3m2.5 3 2.5-3m2.5 3 2-2.4" fill="none" stroke="#263226" stroke-width="1.9" stroke-linecap="round"/></svg><strong>Food Relay</strong></span><div class="app-tools"><button type="button" id="notification-bell" aria-label="Notifications, 1 unread" title="Notifications"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9m-8 12a2 2 0 0 0 4 0"/></svg><span class="unread-dot" aria-hidden="true"></span></button><button type="button" data-app-link="profile" aria-label="Open profile" title="Open profile"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg></button></div></header><article><div class="phone-content"><section class="sheet"><small>Volunteer</small><h1 tabindex="-1">My profile</h1><p class="profile-note">A short ride can bring food a long way.</p><div class="screen-art art-12" aria-hidden="true"><div class="art-copy">Volunteer milestones</div><span class="art-spark">✦</span><div class="art-stamp"><b>01</b><small>WEEK</small></div></div><button class="milestone" data-celebrate="volunteer"><span aria-hidden="true">✦</span><strong>Your first handoff is official</strong><small>Replay your milestone</small></button><div class="panel"><small>Current rank</small><h2>Active Volunteer</h2><progress value="1" max="3" aria-label="Progress to Experienced Volunteer"></progress><p>1 of 3 verified volunteer weeks toward Experienced Volunteer</p></div><h2>Badges</h2><details open><summary>Prepared Volunteer · Earned</summary><p>Orientation complete and first handoff verified.</p></details><details><summary>Consistent Contributor · In progress</summary><p>Complete a verified handoff in three different weeks.</p></details><label><input type="checkbox"> Share earned badges</label><button data-go="7">Open volunteer progress</button></section></div></article><nav class="app-bottom" aria-label="Main navigation"><button type="button" data-app-link="home" aria-label="Home" title="Home"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10h-6v-6H9v6H3z"/></svg></button><button type="button" data-app-link="activity" aria-label="Activity" title="Activity"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 9h6m-6 4h6m-6 4h4"/></svg></button><button type="button" data-app-link="profile" aria-label="Profile" title="Profile"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg></button></nav><dialog id="donor-activity" aria-labelledby="donor-activity-title"><h2 id="donor-activity-title">Donation activity</h2><p><strong>12 bread packs accepted</strong></p><p>Community centre · Partner confirmed at 18:03</p><form method="dialog"><button>Close</button></form></dialog><dialog id="notifications" aria-labelledby="notifications-title"><h2 id="notifications-title">Notifications</h2><div class="panel"><strong>Handoff confirmed</strong><p>The community centre accepted 12 bread packs at 18:03.</p></div><form method="dialog"><button>Done</button></form></dialog></main><dialog id="celebration" aria-labelledby="celebration-title"><div class="celebration-art" aria-hidden="true"><span>✦</span><div class="stamp"><b>12</b><small>PACKS</small></div><span>✧</span></div><p id="celebration-badge"></p><h2 id="celebration-title"></h2><p id="celebration-detail"></p><form method="dialog"><button>Back to my profile</button></form></dialog>
+<script>
+const pageIndex = 12; const pageFiles = ["offer.html","receiving.html","suggested-pickup.html","pickup-progress.html","handoff.html","household-request.html","allocation.html","volunteer-progress.html","collection-update.html","pickup-exception.html","team-standings.html","donor-profile.html","volunteer-profile.html"]; const screen = document.querySelector("article");
+
+const next = [1,2,3,4,5,6,8,8,null,2,7];
+function show(index, focus = true) {
+  if (index !== pageIndex) {
+    location.assign(pageFiles[index] + '?role=' + navigationRole);
+    return;
+  }
+  updateAppNavigation(index);
+
+  if (focus) screen.querySelector('h1').focus();
+}
+document.querySelectorAll('[data-go]').forEach(button => {
+  button.onclick = () => show(Number(button.dataset.go));
+});
+{ const i = pageIndex;
+  const form = screen.querySelector('form');
+  if (form) form.onsubmit = event => {
+    event.preventDefault();
+    if (i === 4 && form.querySelector('select').value === 'Damaged') {
+      location.assign(pageFiles[9] + '?role=' + navigationRole + '&held=1');
+      return;
+    }
+    show(next[i]);
+  };
+}
+const rewardTabs = [...document.querySelectorAll('[data-reward]')];
+const rewardViews = [...document.querySelectorAll('.reward')];
+function selectReward(index) {
+  rewardViews.forEach((view, i) => { view.hidden = i !== index; });
+  rewardTabs.forEach((tab, i) => tab.setAttribute('aria-pressed', String(i === index)));
+}
+rewardTabs.forEach((tab, i) => tab.addEventListener('click', () => selectReward(i)));
+selectReward(0);
+const params = new URLSearchParams(location.search); let navigationRole = params.get('role') === 'volunteer' ? 'volunteer' : 'donor';
+function updateAppNavigation(index) {
+  if ([0, 11].includes(index)) navigationRole = 'donor';
+  if ([2, 3, 7, 10, 12].includes(index)) navigationRole = 'volunteer';
+  const current = [0, 2].includes(index) ? 'home' : [7, 10].includes(index) ? 'activity' : [11, 12].includes(index) ? 'profile' : '';
+  document.querySelectorAll('.app-bottom button').forEach(button => {
+    if (button.dataset.appLink === current) button.setAttribute('aria-current', 'page');
+    else button.removeAttribute('aria-current');
+  });
+}
+document.querySelectorAll('[data-app-link]').forEach(button => {
+  button.addEventListener('click', () => {
+    const tab = button.dataset.appLink;
+    const volunteer = navigationRole === 'volunteer';
+    if (tab === 'activity' && !volunteer) {
+      document.querySelector('#donor-activity').showModal();
+      return;
+    }
+    show({home: volunteer ? 2 : 0, activity: 7, profile: volunteer ? 12 : 11}[tab]);
+  });
+});
+show(pageIndex, false);
+if (pageIndex === 9 && params.has('held')) {
+  document.querySelector('#exception').selectedIndex = 2;
+  document.querySelector('#exception-info').textContent = 'Batch held · coordinator review required';
+}
+const celebration = document.querySelector('#celebration');
+const milestones = {
+  donor: ['FIRST DONATION EARNED', 'From your counter to the community.', 'The community centre accepted all 12 packs from your first offer.'],
+  volunteer: ['PREPARED VOLUNTEER EARNED', 'You got all 12 packs there.', 'First handoff verified at 18:03. Your run added one handoff to your team’s weekly mission.']
+};
+document.querySelectorAll('[data-celebrate]').forEach(button => {
+  button.addEventListener('click', () => {
+    const kind = button.dataset.celebrate;
+    const [badge, title, detail] = milestones[kind];
+    celebration.querySelector('.celebration-art').dataset.kind = kind;
+    celebration.querySelector('#celebration-badge').textContent = badge;
+    celebration.querySelector('#celebration-title').textContent = title;
+    celebration.querySelector('#celebration-detail').textContent = detail;
+    celebration.showModal();
+  });
+});
+const bell = document.querySelector('#notification-bell');
+bell.addEventListener('click', () => {
+  document.querySelector('#notifications').showModal();
+  bell.querySelector('.unread-dot').hidden = true;
+  bell.setAttribute('aria-label', 'Notifications');
+});
+const phone = document.querySelector('main');
+const content = document.querySelector('.phone-content');
+function fitPhone() {
+  const viewport = window.visualViewport;
+  const width = viewport?.width ?? window.innerWidth;
+  const height = viewport?.height ?? window.innerHeight;
+  phone.style.setProperty('--phone-scale', Math.max(0.01, Math.min(1, (width - 12) / 390, (height - 12) / 844)));
+
+  const available = content.parentElement.clientHeight;
+  if (available > 0) {
+    const scale = Math.min(1, available / Math.max(1, content.scrollHeight));
+    content.style.zoom = scale;
+  }
+}
+const contentObserver = new ResizeObserver(fitPhone);
+contentObserver.observe(content);
+contentObserver.observe(content.parentElement);
+window.addEventListener('resize', fitPhone);
+window.visualViewport?.addEventListener('resize', fitPhone);
+fitPhone();</script></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

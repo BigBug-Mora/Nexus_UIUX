@@ -1,0 +1,191 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Food Relay Wireframes</title><style>
+*{box-sizing:border-box}body{margin:0;background:#deded5;color:#23271e;font:15px system-ui,sans-serif}main{max-width:420px;margin:24px auto;border-radius:30px;overflow:hidden;background:#fcfcf7;border:1px solid #babeb0}header{display:flex;justify-content:space-between;align-items:center;padding:15px 20px;background:#263226;color:#fff}header small{color:#d7e2ca}.map{position:relative;background:#e3e7da}.map svg{display:block;width:100%;height:310px}.tag{position:absolute;top:14px;left:16px;background:#fbfcf6;border-radius:20px;padding:8px 12px;font-size:12px;font-weight:700}.sheet{position:relative;margin-top:-20px;background:#fcfcf7;border-radius:24px 24px 0 0;padding:20px}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}h1{font-size:24px;letter-spacing:-.04em;margin:4px 0}small{color:#53604f}.qty{padding:9px 12px;background:#e7eddf;border-radius:8px;font-weight:700;white-space:nowrap}ol{list-style:none;padding:0;margin:16px 0}li{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid #d9ddd3}li time{margin-left:auto;font-weight:700}.dot{width:10px;height:10px;border-radius:50%;background:#263226}.end{border-radius:2px;background:#995634}button{font:inherit;cursor:pointer;border:0;border-radius:13px;background:#d6eb91;color:#222a16;font-weight:750;width:100%;min-height:50px}button:disabled{background:#e1e8d7;cursor:default}.secondary{background:transparent;margin-top:5px;font-size:13px}dialog{border:0;border-radius:18px;padding:20px;width:min(340px,90vw);color:inherit}dialog::backdrop{background:#18231880}@media(max-width:440px){main{margin:0;border:0;border-radius:0}}
+
+nav{display:flex;overflow:auto;gap:6px;padding:10px;background:#e7eddf}nav button{width:auto;padding:6px 10px;white-space:nowrap;background:#fcfcf7;min-height:36px}nav [aria-current=true]{background:#263226;color:white}.sheet{margin-top:0;min-height:390px}.map+.sheet{margin-top:-20px}.map svg{height:240px}label{display:block;margin:10px 0}label input:not([type=checkbox]),select{display:block;width:100%;padding:8px;border:1px solid #9fa79a;border-radius:8px;background:#fff;font:inherit;margin-top:4px}details,.panel{background:#e7eddf;padding:12px;border-radius:10px;margin:10px 0}summary{cursor:pointer}progress{width:100%;accent-color:#304b37}.hint,footer{font-size:13px;color:#53604f}footer{padding:14px 20px}h2{font-size:18px}button:focus-visible,summary:focus-visible{outline:2px solid #995634;outline-offset:2px}
+.reward-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}.reward-tabs button{font-size:12px;background:#e7eddf}.reward-tabs button[aria-pressed=true]{background:#263226;color:white}.reward{padding:6px 0 14px}.reward p{line-height:1.5}progress{height:12px}.milestone{text-align:left;display:grid;grid-template-columns:40px 1fr;align-items:center;gap:2px 8px;padding:12px;margin:12px 0;background:#d6eb91}.milestone span{grid-row:span 2;font-size:26px;text-align:center}.milestone small{font-weight:500}#celebration{text-align:center;background:#fcfcf7}#celebration h2{font-size:25px;line-height:1.05;margin:8px 0}.celebration-art{display:flex;align-items:center;justify-content:center;gap:15px;padding:25px 0;background:#263226;border-radius:16px;color:#d6eb91;font-size:25px}.stamp{background:#d6eb91;color:#263226;padding:12px 20px;transform:rotate(-8deg);clip-path:polygon(0 0,83% 0,100% 22%,100% 100%,0 100%)}.stamp b,.stamp small{display:block}.stamp b{font-size:52px;line-height:.9}.stamp small{font-size:12px;font-weight:800}.celebration-art[data-kind=volunteer]{background:#144d48}.celebration-art[data-kind=volunteer] .stamp{background:#ffb480;color:#342618;transform:rotate(7deg)}@media(prefers-reduced-motion:no-preference){#celebration[open] .stamp{animation:stamp-in .65s cubic-bezier(.2,.85,.3,1.35) both}#celebration[open] .celebration-art>span{animation:spark-in .55s .18s both}@keyframes stamp-in{from{scale:.3;translate:0 -25px;opacity:0}to{scale:1;translate:0;opacity:1}}@keyframes spark-in{from{scale:0;opacity:0}to{scale:1;opacity:1}}}:root{--cream:#fdf9f3;--ink:#282f24;--lime:#dce992;--line:#deded1}
+body{background:#deded3;color:var(--ink)}main{background:var(--cream);box-shadow:0 14px 32px #282f2418}
+header,.screen-art{background:var(--ink)}header{padding:16px 20px}header strong{letter-spacing:-.03em;font-size:19px}
+nav{background:#e8e9dd;padding:9px 12px}nav button{min-height:38px;border:1px solid transparent}
+nav [aria-current=true]{background:var(--ink);border-color:var(--ink)}
+.sheet{background:var(--cream);padding:22px 20px}.sheet>small{font-size:11px;font-weight:750;letter-spacing:.1em;text-transform:uppercase}
+h1{font-size:clamp(25px,7vw,32px);letter-spacing:-.045em;line-height:1.04;margin:7px 0 14px}
+h2{letter-spacing:-.025em}button{background:var(--lime)}button.secondary{background:transparent;text-decoration:underline;text-underline-offset:3px}
+.screen-art{min-height:98px;display:grid;grid-template-columns:1fr auto auto;gap:13px;align-items:center;border-radius:17px;padding:14px 17px;margin:0 0 17px;color:var(--lime);overflow:hidden}
+.art-copy{max-width:11ch;color:#fff9e9;font-size:17px;font-weight:750;letter-spacing:-.025em;line-height:1.1}
+.art-spark{font-size:20px}.art-stamp{min-width:67px;text-align:center;transform:rotate(-7deg);padding:9px 10px;background:var(--lime);color:var(--ink);clip-path:polygon(0 0,83% 0,100% 22%,100% 100%,0 100%)}
+.art-stamp b,.art-stamp small{display:block;color:inherit}.art-stamp b{font-size:27px;letter-spacing:-.05em;line-height:1}.art-stamp small{font-size:9px;font-weight:850;letter-spacing:.09em}
+.art-1,.art-2,.art-3,.art-8{background:#174d45}.art-4,.art-6,.art-12{background:#3e4032}.art-4 .art-stamp,.art-6 .art-stamp,.art-9 .art-stamp,.art-12 .art-stamp{background:#ffbb8c}.art-9{background:#57362b}
+.map+.sheet .screen-art{min-height:75px;padding-block:10px}.map svg{height:205px}
+.panel,details{border:1px solid var(--line);background:#f0f1e5;border-radius:14px}.panel>strong{font-size:17px}
+label input:not([type=checkbox]),select{border-color:#a3a79a;border-radius:11px;min-height:43px;background:#fffdf7}
+footer{border-top:1px solid var(--line);background:var(--cream)}body[data-type]{font-family:var(--ui-font, "Segoe UI"),Arial,sans-serif}
+body[data-type=arial]{--ui-font:Arial}
+body[data-type=bahnschrift]{--ui-font:Bahnschrift}
+body[data-type=verdana]{--ui-font:Verdana}
+body[data-type=trebuchet]{--ui-font:"Trebuchet MS"}
+.type-picker{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0;padding:7px 14px;background:#f0f1e5;font-size:12px;font-weight:650}
+.type-picker select{display:inline-block;width:auto;margin:0;padding:4px 8px;min-height:32px;font-size:13px}body[data-fields] .sheet :is(input:not([type=checkbox]),select){background:var(--field-bg);color:var(--field-text,#252d25);border:var(--field-border);border-bottom:var(--field-bottom,var(--field-border));border-radius:var(--field-radius,11px);box-shadow:var(--field-shadow,none);padding:10px 12px}
+body[data-fields=outline]{--field-bg:#fffdf8;--field-border:1px solid #64745e}
+body[data-fields=filled]{--field-bg:#e6ecde;--field-border:1px solid transparent}
+body[data-fields=raised]{--field-bg:#fffdf8;--field-border:1px solid #ded8cb;--field-shadow:0 3px 0 #dcd4c6}
+body[data-fields=line]{--field-bg:transparent;--field-border:1px solid transparent;--field-bottom:2px solid #ab6144;--field-radius:0}
+body[data-fields=slate]{--field-bg:#e4ebed;--field-text:#243c44;--field-border:1px solid #a4b5bb;--field-shadow:inset 0 2px 3px #1a3c4715}
+body[data-fields] .sheet :is(input,select):focus-visible{outline:2px solid #276656;outline-offset:2px}
+body[data-fields] .sheet form label{font-weight:650;font-size:14px}header.app-top{position:sticky;top:0;z-index:2}.app-top button,.app-bottom button{display:grid;place-items:center;width:48px;min-height:44px;padding:0;background:transparent;color:inherit}.app-top button{color:#dce992}.app-bottom{position:sticky;bottom:0;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);justify-items:center;background:#fdf9f3;border-top:1px solid #deded1;padding:6px 12px calc(6px + env(safe-area-inset-bottom));box-shadow:0 -4px 15px #282f240c}.app-bottom button[aria-current=page]{background:#e6ecde;color:#263226}.relay-brand,.app-tools{display:flex;align-items:center}.relay-brand{gap:8px}.app-tools{gap:2px}.app-top button{position:relative}.unread-dot{position:absolute;top:7px;right:10px;width:7px;height:7px;border-radius:50%;background:#ffbb8c}.profile-note{margin:0 0 14px;padding:0 0 0 12px;border-left:3px solid #839856;color:#40513c;font-size:15px;line-height:1.4}</style><body data-type="trebuchet" data-fields="filled"><main><header class="app-top"><span class="relay-brand"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><path fill="#dce992" d="M5 15c0-5 4.7-9 11-9s11 4 11 9c0 2-1.1 3.7-3 4.5V25H8v-5.5C6.1 18.7 5 17 5 15Z"/><path d="m11 15 2.5-3m2.5 3 2.5-3m2.5 3 2-2.4" fill="none" stroke="#263226" stroke-width="1.9" stroke-linecap="round"/></svg><strong>Food Relay</strong></span><div class="app-tools"><button type="button" id="notification-bell" aria-label="Notifications, 1 unread" title="Notifications"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9m-8 12a2 2 0 0 0 4 0"/></svg><span class="unread-dot" aria-hidden="true"></span></button><button type="button" data-app-link="profile" aria-label="Open profile" title="Open profile"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg></button></div></header><article ><section class="sheet"><small>Donor</small><h1 tabindex="-1">Offer surplus</h1><div class="screen-art art-0" aria-hidden="true"><div class="art-copy">Donor offer</div><span class="art-spark">✦</span><div class="art-stamp"><b>12</b><small>PACKS</small></div></div><button class="secondary" data-go="11">My donor profile</button><button data-fill>Use last offer</button><form><label>Food item<input name="item" required></label><label>Quantity in packs<input name="qty" type="number" min="1" required></label><label>Pickup window<input name="window" required></label><label>Label details<input name="label" required></label><label><input type="checkbox" required> Packaging sealed and label checked</label><p class="hint">Missing details hold the offer. The partner checks category and capacity before assignment.</p><button>Check and submit offer</button></form></section></article><article hidden><section class="sheet"><small>Partner</small><h1 tabindex="-1">Receiving window</h1><div class="screen-art art-1" aria-hidden="true"><div class="art-copy">Receiving capacity</div><span class="art-spark">✦</span><div class="art-stamp"><b>20</b><small>PACKS</small></div></div><h2>17:50–18:20</h2><p>Accepts labelled bread</p><p id="capacity">12 reserved · 8 free · 20 total</p><progress value="12" max="20" aria-label="Reserved capacity"></progress><p><button data-toggle="Pause new offers|Resume new offers" data-feedback="status">Pause new offers</button></p><p id="status" role="status">Receiving open</p><button class="secondary" data-go="2">View suggested pickup</button></section></article><article hidden><div class="map">
+<span class="tag">5 km · Motorcycle</span>
+<svg viewBox="0 0 420 310" role="img" aria-label="Illustrative route from the restaurant to the community centre">
+<rect width="420" height="310" fill="#e4e8db"/>
+<path d="M0 205 Q84 156 104 64L141 0H0Z" fill="#c6d9d8"/>
+<path d="M279 0h89v68h-89zM222 212h87v66h-87z" fill="#cdd9bb"/>
+<g fill="none" stroke="#fafaf4" stroke-width="8"><path d="M124 0 169 310M196 0 222 310M266 0 309 310M338 0 383 310M404 0 410 310M0 95 420 61M0 153 420 123M0 220 420 188M0 282 420 250"/></g>
+<path d="M145 141 207 136 213 203 294 197 280 133 357 128" fill="none" stroke="#fcfcf7" stroke-width="12" stroke-linejoin="round"/>
+<path d="M145 141 207 136 213 203 294 197 280 133 357 128" fill="none" stroke="#304b37" stroke-width="6" stroke-linejoin="round"/>
+<circle cx="145" cy="141" r="9" fill="#263226" stroke="#fff" stroke-width="3"/>
+<rect x="349" y="120" width="16" height="16" rx="3" fill="#995634" stroke="#fff" stroke-width="3"/>
+<g font-family="system-ui" font-size="12" fill="#344735"><text x="122" y="169">Pickup</text><text x="324" y="110">Drop-off</text></g>
+</svg>
+</div><section class="sheet"><small>Volunteer</small><h1 tabindex="-1">Suggested pickup</h1><div class="screen-art art-2" aria-hidden="true"><div class="art-copy">Suggested route</div><span class="art-spark">✦</span><div class="art-stamp"><b>5</b><small>KM</small></div></div><p>Sealed bread packs · 12 packs</p><ol><li><span class="dot"></span>Restaurant pickup <time>17:45</time></li><li><span class="dot end"></span>Community centre <time>18:03 ETA</time></li></ol><details><summary>Why this match?</summary><p>Simulated suggestion. The load fits your motorcycle and estimated arrival is before the 18:20 cutoff. Pickup window 17:35–17:55.</p></details><details><summary>Directions in text</summary><p>Collect at the restaurant’s service entrance, then use the community centre’s receiving entrance.</p></details><button data-go="3">Accept pickup</button><button class="secondary" data-go="9">Decline / slot unavailable</button></section></article><article hidden><div class="map">
+<span class="tag">5 km · Motorcycle</span>
+<svg viewBox="0 0 420 310" role="img" aria-label="Illustrative route from the restaurant to the community centre">
+<rect width="420" height="310" fill="#e4e8db"/>
+<path d="M0 205 Q84 156 104 64L141 0H0Z" fill="#c6d9d8"/>
+<path d="M279 0h89v68h-89zM222 212h87v66h-87z" fill="#cdd9bb"/>
+<g fill="none" stroke="#fafaf4" stroke-width="8"><path d="M124 0 169 310M196 0 222 310M266 0 309 310M338 0 383 310M404 0 410 310M0 95 420 61M0 153 420 123M0 220 420 188M0 282 420 250"/></g>
+<path d="M145 141 207 136 213 203 294 197 280 133 357 128" fill="none" stroke="#fcfcf7" stroke-width="12" stroke-linejoin="round"/>
+<path d="M145 141 207 136 213 203 294 197 280 133 357 128" fill="none" stroke="#304b37" stroke-width="6" stroke-linejoin="round"/>
+<circle cx="145" cy="141" r="9" fill="#263226" stroke="#fff" stroke-width="3"/>
+<rect x="349" y="120" width="16" height="16" rx="3" fill="#995634" stroke="#fff" stroke-width="3"/>
+<g font-family="system-ui" font-size="12" fill="#344735"><text x="122" y="169">Pickup</text><text x="324" y="110">Drop-off</text></g>
+</svg>
+</div><section class="sheet"><small>Volunteer · Donor</small><h1 tabindex="-1">Pickup in progress</h1><div class="screen-art art-3" aria-hidden="true"><div class="art-copy">On the route</div><span class="art-spark">✦</span><div class="art-stamp"><b>17:45</b><small>PICKUP</small></div></div><p><strong id="pickup">Assigned</strong> · 12 sealed packs</p><p>Receiving cutoff 18:20</p><button data-pickup>Confirm pickup at 17:45</button><details><summary>Report a delay</summary><p>Contact the coordinator to review the ETA and whether a reassignment is possible.</p></details><button class="secondary" data-go="4">Open partner handoff</button><button class="secondary" data-go="9">Cancel run</button></section></article><article hidden><section class="sheet"><small>Partner</small><h1 tabindex="-1">Confirm handoff</h1><div class="screen-art art-4" aria-hidden="true"><div class="art-copy">Handoff receipt</div><span class="art-spark">✦</span><div class="art-stamp"><b>12</b><small>PACKS</small></div></div><p>Arrived at 18:03 · 12 packs expected</p><form><label>Accepted quantity<input type="number" min="0" max="12" value="12" required></label><label>Label condition<select><option>Intact</option><option>Damaged</option></select></label><button>Confirm receipt</button></form><details><summary>Report a mismatch or handling issue</summary><p>Hold the batch for coordinator review. Any disputed contribution credit stays pending.</p></details><button class="secondary" data-go="7">View volunteer receipt</button></section></article><article hidden><section class="sheet"><small>Organizer</small><h1 tabindex="-1">Household request</h1><div class="screen-art art-5" aria-hidden="true"><div class="art-copy">Household request</div><span class="art-spark">✦</span><div class="art-stamp"><b>4</b><small>PACKS</small></div></div><form><label>Requested packs<input type="number" min="1" value="4" required></label><label>Food needs <small>Optional</small><input></label><label>Updates by<select><option>SMS</option><option>Phone · coordinator assisted</option></select></label><p>Awaiting stock confirmation</p><button>Record request</button></form></section></article><article hidden><section class="sheet"><small>Partner</small><h1 tabindex="-1">Allocate stock</h1><div class="screen-art art-6" aria-hidden="true"><div class="art-copy">Stock allocation</div><span class="art-spark">✦</span><div class="art-stamp"><b>3</b><small>PACKS</small></div></div><p>12 packs accepted · Contains wheat</p><form><label>Requested packs<input value="4" readonly></label><label>Confirm packs<input type="number" min="0" max="4" value="3" required></label><label>Collection window<input value="18:15–19:00" required></label><button>Review collection message</button></form><p class="hint">The partner reviews available stock and household needs before confirming a quantity.</p></section></article><article hidden><section class="sheet"><small>Volunteer</small><h1 tabindex="-1">Progress & impact</h1><div class="screen-art art-7" aria-hidden="true"><div class="art-copy">Weekly team mission</div><span class="art-spark">✦</span><div class="art-stamp"><b>3/5</b><small>HANDOFFS</small></div></div><div class="panel"><strong>Weekly mission</strong><h2>3 of 5 handoffs</h2><progress max="5" value="3" aria-label="Weekly mission progress"></progress><p>2 confirmed handoffs to go</p></div>
+<div class="reward-tabs" role="group" aria-label="Volunteer progress views"><button data-reward="0">Mission</button><button data-reward="1">Activity</button><button data-reward="2">Badges</button><button data-reward="3">Impact</button></div>
+<section class="reward"><h2>Complete five team handoffs</h2><p>Each distinct partner-confirmed handoff advances the team goal once. You can decline a run or stop for safety without losing credit.</p><button data-go="2">Browse suggested pickup</button></section>
+<section class="reward" hidden><h2>Private contribution history</h2><div class="panel"><strong>+1 point · Verified</strong><p>Community centre · 18:03 · 12 packs accepted</p></div><div class="panel"><strong>Credit pending</strong><p>Disputed handoff · Awaiting partner review</p></div></section>
+<section class="reward" hidden><h2>Volunteer badges</h2><details open><summary>Prepared volunteer · Earned</summary><p>Completed orientation and a partner-confirmed handoff.</p><label><input type="checkbox"> Show this badge to my team</label></details><details><summary>Consistent contributor · In progress</summary><p>Complete a verified handoff in three different weeks.</p><progress max="3" value="1" aria-label="Badge progress"></progress><p>1 of 3 weeks</p></details></section>
+<section class="reward" hidden><h2>This week's impact</h2><div class="panel"><strong>12 packs accepted</strong><p>Your latest verified handoff</p></div><p><strong>3 team handoffs</strong> confirmed this week</p><p>Accepted quantities come from partner receipts.</p></section>
+<button type="button" data-go="10">View opt-in team standings</button><button class="secondary" data-go="12">My volunteer profile</button><button class="secondary" data-go="8">Open household update</button></section></article><article hidden><section class="sheet"><small>Household</small><h1 tabindex="-1">Collection update</h1><div class="screen-art art-8" aria-hidden="true"><div class="art-copy">Household collection</div><span class="art-spark">✦</span><div class="art-stamp"><b>3</b><small>PACKS</small></div></div><div class="panel" id="sms"><strong>3 of 4 packs confirmed</strong><p>Community centre · 18:15–19:00</p><p>Contains wheat. Updated at 18:05.</p></div><label>Notification state<select id="notice"><option>Confirmed</option><option>Changed</option><option>Withdrawn</option></select></label><details><summary>Ask for help or decline privately</summary><p>Call the community centre using the contact in your SMS or speak with the organizer.</p></details></section></article><article hidden><section class="sheet"><small>Coordinator</small><h1 tabindex="-1">Pickup exception</h1><div class="screen-art art-9" aria-hidden="true"><div class="art-copy">Pickup exception</div><span class="art-spark">✦</span><div class="art-stamp"><b>!</b><small>STATUS</small></div></div><label>Reassignment state<select id="exception"><option>Finding another volunteer</option><option>Replacement assigned</option><option>No backup before cutoff</option></select></label><div id="exception-info" class="panel" role="status">Finding another volunteer · receiving slot held</div><p>The donor and partner receive status updates. Good-faith safety stops carry no score penalty.</p></section></article><article hidden><section class="sheet"><small>Volunteer</small><h1 tabindex="-1">Team standings</h1><div class="screen-art art-10" aria-hidden="true"><div class="art-copy">Team standings</div><span class="art-spark">✦</span><div class="art-stamp"><b>4/5</b><small>HANDOFFS</small></div></div><label><input type="checkbox" id="opt"> Opt in to team standings</label><div id="teams" class="panel" hidden><p>Fort team · 4 of 5</p><p>Colombo team · 3 of 5</p><p>Borella team · 2 of 5</p><small>Teams with comparable weekly targets</small></div><p>Standings use capped verified progress after the minimum activity threshold.</p></section></article><article hidden><section class="sheet"><small>Donor profile</small><h1 tabindex="-1">Colombo Bakery</h1><p class="profile-note">Surplus at closing can be part of a neighbour's dinner.</p><div class="screen-art art-11" aria-hidden="true"><div class="art-copy">Donor milestones</div><span class="art-spark">✦</span><div class="art-stamp"><b>03</b><small>WEEKS</small></div></div><button class="milestone" data-celebrate="donor"><span aria-hidden="true">✦</span><strong>Your first donation landed</strong><small>Replay your milestone</small></button><div class="panel"><small>Current rank</small><h2>Regular Donor</h2><progress value="3" max="5" aria-label="Progress to Established Donor"></progress><p>3 of 5 verified donation weeks toward Established Donor</p></div><h2>Badges</h2><details open><summary>First Donation · Earned</summary><p>A partner accepted your first donation.</p></details><details><summary>Five Weeks of Giving · In progress</summary><p>Have a donation accepted in five different weeks.</p></details><label><input type="checkbox"> Share earned badges</label><button data-go="0">Offer surplus</button></section></article>
+<article hidden><section class="sheet"><small>Volunteer</small><h1 tabindex="-1">My profile</h1><p class="profile-note">A short ride can bring food a long way.</p><div class="screen-art art-12" aria-hidden="true"><div class="art-copy">Volunteer milestones</div><span class="art-spark">✦</span><div class="art-stamp"><b>01</b><small>WEEK</small></div></div><button class="milestone" data-celebrate="volunteer"><span aria-hidden="true">✦</span><strong>Your first handoff is official</strong><small>Replay your milestone</small></button><div class="panel"><small>Current rank</small><h2>Active Volunteer</h2><progress value="1" max="3" aria-label="Progress to Experienced Volunteer"></progress><p>1 of 3 verified volunteer weeks toward Experienced Volunteer</p></div><h2>Badges</h2><details open><summary>Prepared Volunteer · Earned</summary><p>Orientation complete and first handoff verified.</p></details><details><summary>Consistent Contributor · In progress</summary><p>Complete a verified handoff in three different weeks.</p></details><label><input type="checkbox"> Share earned badges</label><button data-go="7">Open volunteer progress</button></section></article><nav class="app-bottom" aria-label="Main navigation"><button type="button" data-app-link="home" aria-label="Home" title="Home"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10h-6v-6H9v6H3z"/></svg></button><button type="button" data-app-link="activity" aria-label="Activity" title="Activity"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 9h6m-6 4h6m-6 4h4"/></svg></button><button type="button" data-app-link="profile" aria-label="Profile" title="Profile"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg></button></nav><dialog id="donor-activity" aria-labelledby="donor-activity-title"><h2 id="donor-activity-title">Donation activity</h2><p><strong>12 bread packs accepted</strong></p><p>Community centre · Partner confirmed at 18:03</p><form method="dialog"><button>Close</button></form></dialog><dialog id="notifications" aria-labelledby="notifications-title"><h2 id="notifications-title">Notifications</h2><div class="panel"><strong>Handoff confirmed</strong><p>The community centre accepted 12 bread packs at 18:03.</p></div><form method="dialog"><button>Done</button></form></dialog></main><dialog id="celebration" aria-labelledby="celebration-title"><div class="celebration-art" aria-hidden="true"><span>✦</span><div class="stamp"><b>12</b><small>PACKS</small></div><span>✧</span></div><p id="celebration-badge"></p><h2 id="celebration-title"></h2><p id="celebration-detail"></p><form method="dialog"><button>Back to my profile</button></form></dialog>
+<script>
+const screens = [...document.querySelectorAll('article')];
+
+const next = [1,2,3,4,5,6,8,8,null,2,7];
+function show(index, focus = true) {
+  updateAppNavigation(index);
+  screens.forEach((screen, i) => { screen.hidden = i !== index; });
+
+  if (focus) screens[index].querySelector('h1').focus();
+}
+document.querySelectorAll('[data-go]').forEach(button => {
+  button.onclick = () => show(Number(button.dataset.go));
+});
+screens.forEach((screen, i) => {
+  const form = screen.querySelector('form');
+  if (form) form.onsubmit = event => {
+    event.preventDefault();
+    if (i === 4 && form.querySelector('select').value === 'Damaged') {
+      document.querySelector('#exception').selectedIndex = 2;
+      document.querySelector('#exception-info').textContent = 'Batch held · coordinator review required';
+      show(9);
+      return;
+    }
+    show(next[i]);
+  };
+});
+document.querySelector('[data-fill]').onclick = () => {
+  const fields = screens[0].querySelector('form').elements;
+  fields.namedItem('item').value = 'Sealed bread packs';
+  fields.namedItem('qty').value = 12;
+  fields.namedItem('window').value = '17:35–17:55';
+  fields.namedItem('label').value = 'Contains wheat';
+};
+document.querySelector('[data-toggle]').onclick = event => {
+  const paused = event.target.textContent === 'Pause new offers';
+  event.target.textContent = paused ? 'Resume new offers' : 'Pause new offers';
+  document.querySelector('#status').textContent = paused ? 'New offers paused · existing reservation held' : 'Receiving open';
+};
+document.querySelector('[data-pickup]').onclick = event => {
+  document.querySelector('#pickup').textContent = 'Picked up at 17:45';
+  event.target.disabled = true;
+};
+document.querySelector('#notice').onchange = event => {
+  document.querySelector('#sms').textContent = [
+    '3 of 4 packs confirmed · Community centre · 18:15–19:00 · Contains wheat',
+    'Collection moved to 18:30–19:00 · Community centre · Contains wheat',
+    'Collection withdrawn · Please wait for another update before travelling'
+  ][event.target.selectedIndex];
+};
+document.querySelector('#exception').onchange = event => {
+  document.querySelector('#exception-info').textContent = [
+    'Finding another volunteer · receiving slot held',
+    'Replacement assigned · receiving slot held',
+    'Pickup closed · donor notified · slot released'
+  ][event.target.selectedIndex];
+};
+document.querySelector('#opt').onchange = event => {
+  document.querySelector('#teams').hidden = !event.target.checked;
+};
+const rewardTabs = [...document.querySelectorAll('[data-reward]')];
+const rewardViews = [...document.querySelectorAll('.reward')];
+function selectReward(index) {
+  rewardViews.forEach((view, i) => { view.hidden = i !== index; });
+  rewardTabs.forEach((tab, i) => tab.setAttribute('aria-pressed', String(i === index)));
+}
+rewardTabs.forEach((tab, i) => tab.addEventListener('click', () => selectReward(i)));
+selectReward(0);
+let navigationRole = 'donor';
+function updateAppNavigation(index) {
+  if ([0, 11].includes(index)) navigationRole = 'donor';
+  if ([2, 3, 7, 10, 12].includes(index)) navigationRole = 'volunteer';
+  const current = [0, 2].includes(index) ? 'home' : [7, 10].includes(index) ? 'activity' : [11, 12].includes(index) ? 'profile' : '';
+  document.querySelectorAll('.app-bottom button').forEach(button => {
+    if (button.dataset.appLink === current) button.setAttribute('aria-current', 'page');
+    else button.removeAttribute('aria-current');
+  });
+}
+document.querySelectorAll('[data-app-link]').forEach(button => {
+  button.addEventListener('click', () => {
+    const tab = button.dataset.appLink;
+    const volunteer = navigationRole === 'volunteer';
+    if (tab === 'activity' && !volunteer) {
+      document.querySelector('#donor-activity').showModal();
+      return;
+    }
+    show({home: volunteer ? 2 : 0, activity: 7, profile: volunteer ? 12 : 11}[tab]);
+  });
+});
+show(0, false);
+const celebration = document.querySelector('#celebration');
+const milestones = {
+  donor: ['FIRST DONATION EARNED', 'From your counter to the community.', 'The community centre accepted all 12 packs from your first offer.'],
+  volunteer: ['PREPARED VOLUNTEER EARNED', 'You got all 12 packs there.', 'First handoff verified at 18:03. Your run added one handoff to your team’s weekly mission.']
+};
+document.querySelectorAll('[data-celebrate]').forEach(button => {
+  button.addEventListener('click', () => {
+    const kind = button.dataset.celebrate;
+    const [badge, title, detail] = milestones[kind];
+    celebration.querySelector('.celebration-art').dataset.kind = kind;
+    celebration.querySelector('#celebration-badge').textContent = badge;
+    celebration.querySelector('#celebration-title').textContent = title;
+    celebration.querySelector('#celebration-detail').textContent = detail;
+    celebration.showModal();
+  });
+});
+const bell = document.querySelector('#notification-bell');
+bell.addEventListener('click', () => {
+  document.querySelector('#notifications').showModal();
+  bell.querySelector('.unread-dot').hidden = true;
+  bell.setAttribute('aria-label', 'Notifications');
+});</script></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
